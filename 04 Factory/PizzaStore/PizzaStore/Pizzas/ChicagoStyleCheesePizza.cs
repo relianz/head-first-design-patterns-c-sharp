@@ -3,7 +3,7 @@
 //
 //    Copyright (C) 2017 Markus A. Stulle (markus@stulle.zone)
 //
-//	  This file is part of HFDP/C#.   
+//    This file is part of HFDP/C#.   
 //
 //    HFDP/C# is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 //    along with HFDP/C#. If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System;
+using static System.Console;
 
 namespace PizzaStore.Pizzas
 {
@@ -38,7 +38,7 @@ namespace PizzaStore.Pizzas
                
         public override void Cut()
         {
-            Console.WriteLine( "Cutting the pizza into square slices" );
+            WriteLine( "Cutting the pizza into square slices" );
 
         } // Cut        
         #endregion

@@ -3,7 +3,7 @@
 //
 //    Copyright (C) 2017 Markus A. Stulle (markus@stulle.zone)
 //
-//	  This file is part of HFDP/C#.   
+//    This file is part of HFDP/C#.   
 //
 //    HFDP/C# is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -19,8 +19,8 @@
 //    along with HFDP/C#. If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using System;
+using System.Collections.Generic;   // List
+using static System.Console;
 
 namespace PizzaStore.Pizzas
 {
@@ -29,13 +29,13 @@ namespace PizzaStore.Pizzas
         #region public
         public void Prepare()
         {
-            Console.WriteLine( "Preparing {0}", name );
-            Console.WriteLine( "Tossing dough..." );
-            Console.WriteLine( "Adding sauce..." );
-            Console.WriteLine( "Adding toppings:");
+            WriteLine( "Preparing {0}", name );
+            WriteLine( "Tossing dough..." );
+            WriteLine( "Adding sauce..." );
+            WriteLine( "Adding toppings:" );
 
             foreach (var t in toppings)
-                Console.WriteLine( "   {0}", t );
+                WriteLine( "   {0}", t );
 
         } // Prepare
 
@@ -46,19 +46,19 @@ namespace PizzaStore.Pizzas
                 
         public virtual void Bake()
         {
-            Console.WriteLine( "Bake for 25 Minutes at 350°" );
+            WriteLine( "Bake for 25 Minutes at 350°" );
 
         } // Bake
 
         public virtual void Cut()
         {
-            Console.WriteLine( "Cutting the pizza into diagonal slices" );
+            WriteLine( "Cutting the pizza into diagonal slices" );
 
         } // Cut
 
         public virtual void Box()
         {
-            Console.WriteLine( "Place pizza in official PizzaStore box" );
+            WriteLine( "Place pizza in official PizzaStore box" );
 
         } // Box        
         #endregion public

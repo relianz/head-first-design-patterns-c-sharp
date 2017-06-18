@@ -3,7 +3,7 @@
 //
 //    Copyright (C) 2017 Markus A. Stulle (markus@stulle.zone)
 //
-//	  This file is part of HFDP/C#.   
+//    This file is part of HFDP/C#.   
 //
 //    HFDP/C# is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -19,9 +19,9 @@
 //    along with HFDP/C#. If not, see <http://www.gnu.org/licenses/>.
 //
 
-using PizzaStore.Pizzas;    // Pizza
-using PizzaStore.Stores;    // NYPizzaStore, ChicagoPizzaStore
-using System;
+using PizzaStore.Pizzas;        // Pizza
+using PizzaStore.Stores;        // NYPizzaStore, ChicagoPizzaStore
+using static System.Console;
 
 namespace PizzaStore
 {
@@ -35,12 +35,13 @@ namespace PizzaStore
             Pizza pizza;
 
             pizza = nyStore.OrderPizza( "cheese" );
-            Console.WriteLine( "Ethan ordered a {0} pizza\n", pizza.GetName() );
+            WriteLine( "Ethan ordered a {0} pizza\n", pizza.GetName() );
 
             pizza = chicagoStore.OrderPizza("cheese");
-            Console.WriteLine("Joel ordered a {0} pizza\n", pizza.GetName());
+            WriteLine("Joel ordered a {0} pizza\n", pizza.GetName());
 
-            Console.ReadLine();
+            // Keep console open:
+            ReadLine();
 
         } // Main
 
