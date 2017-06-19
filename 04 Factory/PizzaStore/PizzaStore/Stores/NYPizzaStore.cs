@@ -3,7 +3,7 @@
 //
 //    Copyright (C) 2017 Markus A. Stulle (markus@stulle.zone)
 //
-//	  This file is part of HFDP/C#.   
+//    This file is part of HFDP/C#.   
 //
 //    HFDP/C# is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 //
 
 using PizzaStore.Pizzas;        // Pizza, NYStyleCheesePizza
-using System;
+using static System.Console;
 
 namespace PizzaStore.Stores
 {
@@ -32,7 +32,7 @@ namespace PizzaStore.Stores
                 return new NYStyleCheesePizza();
             else
             {
-                Console.WriteLine( "Don't know how to create {0} pizza!", type );
+                WriteLine( "Don't know how to create {0} pizza!", type );
                 return null;
             }
 
