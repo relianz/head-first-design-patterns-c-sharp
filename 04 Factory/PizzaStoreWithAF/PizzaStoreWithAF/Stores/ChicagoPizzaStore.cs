@@ -34,14 +34,16 @@ namespace PizzaStoreWithAF.Stores
 
             if( type.Equals( "cheese" ) )
             {
-                pizza = new CheesePizza(ingredientFactory);
+                pizza = new CheesePizza( ingredientFactory );
                 pizza.Name = "Chicago Style Cheese Pizza";
 
             } // cheese
             else
             {
                 WriteLine( "{0}: Don't know how to create {1} pizza", this.GetType().ToString(), type );
-            }
+                throw new System.NotImplementedException( type );
+
+            } // unknown pizza type
 
             return pizza;
 

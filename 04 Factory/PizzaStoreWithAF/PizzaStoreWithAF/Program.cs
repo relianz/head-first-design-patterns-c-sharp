@@ -21,7 +21,9 @@
 
 using PizzaStoreWithAF.Pizzas;      // Pizza
 using PizzaStoreWithAF.Stores;      // PizzaStore,...
+
 using static System.Console;        // WriteLine,...
+using System;                       // Exception
 
 namespace PizzaStoreWithAF
 {
@@ -34,13 +36,20 @@ namespace PizzaStoreWithAF
 
             Pizza pizza;
 
-            pizza = nyStore.OrderPizza( "cheese" );
-            WriteLine( "Ethan ordered a {0} pizza\n", pizza.Name );
-            WriteLine( pizza );
+            try
+            {
+                pizza = nyStore.OrderPizza( "cheese" );
+                WriteLine( "Ethan ordered a {0} pizza\n", pizza.Name );
+                WriteLine( pizza );
 
-            pizza = chicagoStore.OrderPizza( "cheese" );
-            WriteLine( "Joel ordered a {0} pizza\n", pizza.Name );
-            WriteLine( pizza );
+                pizza = chicagoStore.OrderPizza( "clam" );
+                WriteLine( "Joel ordered a {0} pizza\n", pizza.Name );
+                WriteLine( pizza );
+            }
+            catch( Exception x )
+            {
+                WriteLine( "Exception caused by <{0}>", x.Message );
+            }
 
             // Keep console open:
             ReadLine();

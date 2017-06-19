@@ -41,7 +41,9 @@ namespace PizzaStoreWithAF.Stores
             else
             {
                 WriteLine( "{0}: Don't know how to create {1} pizza", this.GetType().ToString(), type );
-            }
+                throw new System.NotImplementedException( type );
+
+            } // unknown pizza type
             
             return pizza;
 
