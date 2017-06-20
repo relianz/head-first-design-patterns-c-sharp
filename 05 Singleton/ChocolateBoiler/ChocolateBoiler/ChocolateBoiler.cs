@@ -30,14 +30,17 @@ namespace Hershey
 
         public static ChocolateBoiler GetInstance( string name )
         {
-            if( uniqueInstance == null )
-            {
+            // use double-checked locking to ensure thread safety:
+            if ( uniqueInstance == null )
+            {                
                 Object lockThis = new Object();
                 lock ( lockThis )
                 {
                     uniqueInstance = new ChocolateBoiler();
 
-                    uniqueInstance.name = name;
+                    if( name != null )
+                        uniqueInstance.name = name;
+
                     uniqueInstance.IsEmpty = true;
 
                 } // lock
@@ -50,21 +53,8 @@ namespace Hershey
 
         public static ChocolateBoiler GetInstance()
         {
-            if (uniqueInstance == null)
-            {
-                Object lockThis = new Object();
-                lock (lockThis)
-                {
-                    uniqueInstance = new ChocolateBoiler();
-                    
-                    uniqueInstance.IsEmpty = true;
-
-                } // lock
-
-            } // first instance 
-
-            return uniqueInstance;
-
+            return GetInstance( null );
+        
         } // ctor
 
         public void Fill()
